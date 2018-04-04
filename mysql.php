@@ -11,14 +11,52 @@
         $username = mysqli_real_escape_string($db, $_POST['user']);
         $password = mysqli_real_escape_string($db, $_POST['pass']);
         
-        //TODO: Add login/register code
         if($_POST['new']==1)
         {
-            echo "User created!";
+            $query = mysqli_query($db, "SELECT * from `users` WHERE username='$username'");
+            if(!$query)
+            {
+                echo "Error: " . mysqli_error($db);
+                exit;
+            }
+            if(mysqli_num_rows($query) > 0)
+            {
+                echo "Username already taken!";
+                exit;
+            }
+            if($db->query("INSERT INTO users (username, password) VALUES ('$username', '$password')"))
+            {
+                echo "User created!";
+            }
+            else
+            {
+                echo "Error: " . $db->error;
+                exit;
+            }
         }
         else
         {
-            echo "Logged in!";
+            $query = mysqli_query($db, "SELECT * from `users` WHERE username='$username'");
+            if(!$query)
+            {
+                echo "Error: " . mysqli_error($db);
+                exit;
+            }
+            if(mysqli_num_rows($query) == 0)
+            {
+                echo "Unknown username.";
+                exit;
+            }
+
+            $data = $query->fetch_assoc();
+            if($password == $data["password"])
+            {
+                echo "Valid User! ID: " . $data["id"];
+            }
+            else
+            {
+                echo "Invalid password!";
+            }
         }
     }
     else
