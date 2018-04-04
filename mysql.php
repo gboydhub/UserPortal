@@ -11,7 +11,15 @@
         $username = mysqli_real_escape_string($db, $_POST['user']);
         $password = mysqli_real_escape_string($db, $_POST['pass']);
         
-        echo "Logged in!";
+        //TODO: Add login/register code
+        if($_POST['new']==1)
+        {
+            echo "User created!";
+        }
+        else
+        {
+            echo "Logged in!";
+        }
     }
     else
     {
