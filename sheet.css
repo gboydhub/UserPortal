@@ -1,0 +1,48 @@
+body {
+    background-color: #1E1E1E;
+    text-color
+}
+
+.fInput {
+    width: 200px;
+    height: 22px;
+    border: 2px solid #333333;
+    border-radius:7px;
+    color: #1E1E1E;
+}
+
+input:focus {outline:none;}
+
+.sendBtn {
+    padding: 10px 15px 11px;
+    font-size: 12px;
+    height: 27px;
+    background-color: #333333;
+    font-weight: bold;
+    text-shadow: 2px 2px #2A2A2A;
+    line-height: 8px;
+    color: #DADADA;
+    border-radius: 4px;
+    border: 1px solid #2A2A2A;
+    cursor: pointer;
+    box-shadow: 0 2px 0 rgba(255, 255, 255, 0.5) inset;
+}
+
+.titleText{
+    font-weight: bold;
+    color: #DADADA;
+    text-shadow: 1px 1px #2A2A2A;
+    font-size: 24px;
+}
+
+.dataresult{
+    font-weight: bold;
+    color: #DADADA;
+    text-shadow: 1px 1px #2A2A2A;
+    font-size: 16px;
+    font-family: 'Oswald', sans-serif;
+}
+
+table {
+    border: 0;
+}
