@@ -71,5 +71,5 @@ $(document).ready(function(){
 
 </td></tr></table>
 
-<p class="dataresult" id="dataresult">asd</p>
+<p class="dataresult" id="dataresult"></p>
 </body>
